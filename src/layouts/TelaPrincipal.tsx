@@ -13,12 +13,12 @@ import Exemplo07_Image from '../components/Exemplo07_Image';
 //como parametro e constrói uma View com o componente 
 //HelloWorld e Exemplo1 dentro
 const TelaPrincipal = (props: PrincipalProps) => {
-  
+
   return (
     <View
       style={[styles.tela]}>
-        <Exemplo07_Image/>
-        {/* <Exemplo1/> */}
+      
+      <Exemplo06_TextInput />
     </View>
   );
 }
