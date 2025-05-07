@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Image, Switch, Pressable } from 'react-native';
-
-import { styles } from '../styles/styles'
+import React, {useState} from 'react';
+import {View, Text, TextInput, Pressable, Image} from 'react-native';
+import {styles} from '../styles/styles';
 
 const TelaCadastroPaciente: React.FC = () => {
-  const [comorbidade, setComorbidade] = useState(false);
-
-  const toggleComorbidade = () => {
-    setComorbidade((prevState) => !prevState);
-  };
+  const [comorbidade, setComorbidade] = useState<'sim' | 'nao' | null>(null);
 
   return (
     <View style={styles.container}>
       <Image source={require('../images/cliente.png')} style={styles.image} />
-      <Text style={styles.title}>Cadastro de Paciente</Text>
+      <Text style={styles.title}>Tela Cadastro</Text>
       <View style={styles.form}>
         <Text style={styles.label}>Nome</Text>
-        <TextInput style={styles.input} placeholder="Digite o nome" />
+        <TextInput
+          style={styles.input}
+          placeholder="Digite o nome"
+          placeholderTextColor="gray"
+        />
 
         <Text style={styles.label}>E-mail</Text>
         <TextInput
           style={styles.input}
           placeholder="Digite o e-mail"
           keyboardType="email-address"
+          placeholderTextColor="gray"
         />
 
         <Text style={styles.label}>Telefone</Text>
@@ -30,24 +30,52 @@ const TelaCadastroPaciente: React.FC = () => {
           style={styles.input}
           placeholder="Digite o telefone"
           keyboardType="phone-pad"
+          placeholderTextColor="gray"
         />
 
         <Text style={styles.label}>Possui comorbidade</Text>
-        <View style={styles.toggleContainer}>
-          <Text style={styles.toggleLabel}>{comorbidade ? 'Sim' : 'Não'}</Text>
-          <Switch
-            value={comorbidade}
-            onValueChange={toggleComorbidade}
-            thumbColor={comorbidade ? '#4CAF50' : '#f44336'}
-            trackColor={{ false: '#767577', true: '#81b0ff' }}
+        <Pressable
+          style={[
+            styles.switchContainer,
+            comorbidade === 'sim'
+              ? styles.switchSelected
+              : styles.switchDefault,
+          ]}
+          onPress={() => setComorbidade(comorbidade === 'sim' ? 'nao' : 'sim')}>
+          <View
+            style={[
+              styles.switchToggle,
+              comorbidade === 'sim'
+                ? styles.switchToggleOn
+                : styles.switchToggleOff,
+            ]}
           />
-        </View>
+          <Text style={[styles.switchText, styles.switchText]}>
+            {comorbidade === 'sim' ? 'Sim' : 'Não'}
+          </Text>
+        </Pressable>
       </View>
       <View style={styles.buttonContainer}>
-        <Pressable style={styles.buttonCadastrar}>
+        <Pressable
+          style={({pressed}) => [
+            styles.button,
+            {
+              transform: [{scale: pressed ? 0.95 : 1}],
+              backgroundColor: pressed ? 'lightgray' : 'transparent',
+            },
+          ]}
+          onPress={() => console.log('Cadastrar pressionado')}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </Pressable>
-        <Pressable style={styles.buttonCancelar}>
+        <Pressable
+          style={({pressed}) => [
+            styles.button,
+            {
+              transform: [{scale: pressed ? 0.95 : 1}],
+              backgroundColor: pressed ? 'lightgray' : 'transparent',
+            },
+          ]}
+          onPress={() => console.log('Cancelar pressionado')}>
           <Text style={styles.buttonText}>Cancelar</Text>
         </Pressable>
       </View>
