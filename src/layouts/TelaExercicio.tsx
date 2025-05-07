@@ -1,9 +1,15 @@
-import React from 'react';
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, Image, Switch, Pressable } from 'react-native';
 
-import {styles} from '../styles/styles';
+import { styles } from '../styles/styles'
 
 const TelaCadastroPaciente: React.FC = () => {
+  const [comorbidade, setComorbidade] = useState(false);
+
+  const toggleComorbidade = () => {
+    setComorbidade((prevState) => !prevState);
+  };
+
   return (
     <View style={styles.container}>
       <Image source={require('../images/cliente.png')} style={styles.image} />
@@ -28,21 +34,22 @@ const TelaCadastroPaciente: React.FC = () => {
 
         <Text style={styles.label}>Possui comorbidade</Text>
         <View style={styles.toggleContainer}>
-          <TouchableOpacity style={styles.toggleButtonSim}>
-            <Text style={styles.toggleButtonText}>Sim</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.toggleButtonNao}>
-            <Text style={styles.toggleButtonText}>Não</Text>
-          </TouchableOpacity>
+          <Text style={styles.toggleLabel}>{comorbidade ? 'Sim' : 'Não'}</Text>
+          <Switch
+            value={comorbidade}
+            onValueChange={toggleComorbidade}
+            thumbColor={comorbidade ? '#4CAF50' : '#f44336'}
+            trackColor={{ false: '#767577', true: '#81b0ff' }}
+          />
         </View>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.buttonCadastrar}>
+        <Pressable style={styles.buttonCadastrar}>
           <Text style={styles.buttonText}>Cadastrar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonCancelar}>
+        </Pressable>
+        <Pressable style={styles.buttonCancelar}>
           <Text style={styles.buttonText}>Cancelar</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
