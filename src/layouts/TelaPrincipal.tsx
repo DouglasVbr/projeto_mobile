@@ -10,7 +10,7 @@ import Exemplo07_Image from '../components/Exemplo07_Image';
 // HelloWorld e Exemplo1 dentro
 const TelaPrincipal = (_props: PrincipalProps) => {
   return (
-    <View style={[styles.tela]}>
+    <View style={[styles.container]}>
       <Exemplo07_Image />
       {/* <Exemplo1/> */}
     </View>

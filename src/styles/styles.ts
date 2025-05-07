@@ -1,96 +1,15 @@
 import {StyleSheet} from 'react-native';
 
-//o StyleSheet é a folha de estilo, equivalente ao css
 const styles = StyleSheet.create({
-  tela: {
-    flex: 1,
-    // backgroundColor: '#00FFFF'
-  },
-  tituloTela: {
-    fontSize: 35,
-    textAlign: 'center',
-    color: 'black',
-  },
-  titulo1: {
-    fontSize: 40,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  titulo2: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    color: 'black',
-  },
-  botao: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 'auto',
-    backgroundColor: 'green',
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    marginTop: 20,
-    borderRadius: 10,
-  },
-  botao_vermelho: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'red',
-    paddingVertical: 10,
-    paddingHorizontal: 30,
-    marginTop: 20,
-    borderRadius: 10,
-  },
-  texto_botao: {
-    fontSize: 20,
-    color: 'white',
-  },
-  titulo_campos: {
-    fontSize: 20,
-    color: 'black',
-  },
-  caixa_texto: {
-    color: 'black',
-    fontSize: 20,
-    borderWidth: 1,
-    borderRadius: 4,
-    margin: 3,
-    backgroundColor: 'white',
-  },
-
-  largura_70: {
-    width: '70%',
-  },
-
-  imagem_200: {
-    width: 200,
-    height: 200,
-  },
-
-  card: {
-    borderWidth: 2,
-    borderColor: 'black',
-    borderRadius: 15,
-    marginVertical: 5,
-    marginHorizontal: 5,
-    backgroundColor: 'white',
-  },
-  click: {
-    opacity: 0.5,
-  },
-  centralizar: {
-    alignItems: 'center',
-  },
-
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: '#fff',
     alignItems: 'center',
   },
   image: {
-    width: 150,
-    height: 150,
-    borderRadius: 75,
+    width: 100,
+    height: 100,
     marginBottom: 20,
   },
   title: {
@@ -103,16 +22,48 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    marginBottom: 5,
+    fontWeight: 'bold',
+    fontFamily: 'Cursive',
+    color: '#fff',
+    textShadowColor: 'goldenrod',
+    textShadowOffset: {width: -1, height: 1},
+    textShadowRadius: 1,
+    padding: 10,
+    textAlign: 'auto',
+    marginBottom: 20,
   },
   input: {
     height: 40,
-    borderColor: '#ccc',
+    borderColor: 'goldenrod',
     borderWidth: 1,
-    borderRadius: 5,
+    borderRadius: 10,
     marginBottom: 15,
     paddingHorizontal: 10,
     backgroundColor: '#fff',
+  },
+  toggleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginVertical: 10,
+  },
+  toggleButton: {
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    flex: 0.45,
+  },
+  toggleButtonDefault: {
+    backgroundColor: '#ddd',
+  },
+  toggleButtonSelectedSim: {
+    backgroundColor: 'goldenrod',
+  },
+  toggleButtonSelectedNao: {
+    backgroundColor: 'gray',
+  },
+  toggleButtonText: {
+    fontSize: 16,
+    color: '#fff',
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -120,49 +71,53 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: '100%',
   },
-  buttonCadastrar: {
-    backgroundColor: '#4CAF50',
+  button: {
+    flex: 1,
     padding: 15,
     borderRadius: 5,
-    flex: 1,
-    marginRight: 10,
+    marginHorizontal: 5,
     alignItems: 'center',
-  },
-  buttonCancelar: {
-    backgroundColor: '#f44336',
-    padding: 15,
-    borderRadius: 5,
-    flex: 1,
-    marginLeft: 10,
-    alignItems: 'center',
-  },
-  toggleContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginVertical: 10,
-  },
-  toggleButtonSim: {
-    padding: 10,
-    backgroundColor: '#4CAF50', // verde
-    borderRadius: 5,
-    alignItems: 'center',
-    flex: 0.45,
-  },
-  toggleButtonNao: {
-    padding: 10,
-    backgroundColor: '#f44336', // vermelho
-    borderRadius: 5,
-    alignItems: 'center',
-    flex: 0.45,
-  },
-  toggleButtonText: {
-    fontSize: 16,
-    color: '#fff',
+    borderWidth: 2,
+    borderColor: 'goldenrod',
+    backgroundColor: 'transparent',
   },
   buttonText: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#fff',
+    color: 'black',
+  },
+  switchContainer: {
+    width: 60,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: '#ccc',
+    justifyContent: 'center',
+    padding: 5,
+  },
+  switchSelected: {
+    backgroundColor: '#4caf50',
+  },
+  switchDefault: {
+    backgroundColor: '#ccc',
+  },
+  switchToggle: {
+    width: 20,
+    height: 20,
+    borderRadius: 10,
+    backgroundColor: '#fff',
+  },
+  switchToggleOn: {
+    backgroundColor: '#4caf50',
+    alignSelf: 'flex-end',
+  },
+  switchToggleOff: {
+    backgroundColor: '#ccc',
+    alignSelf: 'flex-start',
+  },
+  switchText: {
+    fontSize: 16,
+    color: 'black',
+    marginLeft: 8,
   },
 });
 
