@@ -1,28 +1,19 @@
 import React from 'react';
 import {Text} from 'react-native';
-import { styles } from '../styles/styles';
+import {styles} from '../styles/styles';
 
 type NomeProps = {
-    nome:string;
-    sobrenome: string;
-}
+  nome: string;
+  sobrenome: string;
+};
 
 const NomePersonalizado = (props: NomeProps) => {
-  return (
-    <Text style={styles.titulo2}>
-        {props.nome + ' ' + props.sobrenome}
-    </Text>
-  )
+  return <Text style={styles.title}>{props.nome + ' ' + props.sobrenome}</Text>;
 };
 
 const Batatinha = () => {
-  return (
-    <NomePersonalizado 
-       
-      sobrenome={'Bandasz'}
-      nome={'Igor'} />
-  );
-}
+  return <NomePersonalizado nome={'Igor'} sobrenome={'Bandasz'} />;
+};
 
 export default NomePersonalizado;
-export {Batatinha}; 
+export {Batatinha};

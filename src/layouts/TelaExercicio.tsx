@@ -1,20 +1,41 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Pressable, Image} from 'react-native';
+import {View, Text, TextInput, Pressable, Image, Alert} from 'react-native';
 import {styles} from '../styles/styles';
 
 const TelaCadastroPaciente: React.FC = () => {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+  const [telefone, setTelefone] = useState('');
   const [comorbidade, setComorbidade] = useState<'sim' | 'nao' | null>(null);
+
+  const handleCadastrar = () => {
+    Alert.alert(
+      'Dados do Cadastro',
+      `Nome: "${nome}"\nE-mail: "${email}"\nTelefone: "${telefone}"\nPossui comorbidade: ${
+        comorbidade === 'sim' ? 'Sim' : 'Não'
+      }`,
+    );
+  };
+
+  const handleCancelar = () => {
+    setNome('');
+    setEmail('');
+    setTelefone('');
+    setComorbidade(null);
+  };
 
   return (
     <View style={styles.container}>
       <Image source={require('../images/cliente.png')} style={styles.image} />
-      <Text style={styles.title}>Tela Cadastro</Text>
+      <Text style={styles.title}>Cadastro de Exercício</Text>
       <View style={styles.form}>
         <Text style={styles.label}>Nome</Text>
         <TextInput
           style={styles.input}
           placeholder="Digite o nome"
           placeholderTextColor="gray"
+          value={nome}
+          onChangeText={setNome}
         />
 
         <Text style={styles.label}>E-mail</Text>
@@ -23,6 +44,8 @@ const TelaCadastroPaciente: React.FC = () => {
           placeholder="Digite o e-mail"
           keyboardType="email-address"
           placeholderTextColor="gray"
+          value={email}
+          onChangeText={setEmail}
         />
 
         <Text style={styles.label}>Telefone</Text>
@@ -31,6 +54,8 @@ const TelaCadastroPaciente: React.FC = () => {
           placeholder="Digite o telefone"
           keyboardType="phone-pad"
           placeholderTextColor="gray"
+          value={telefone}
+          onChangeText={setTelefone}
         />
 
         <Text style={styles.label}>Possui comorbidade</Text>
@@ -50,7 +75,7 @@ const TelaCadastroPaciente: React.FC = () => {
                 : styles.switchToggleOff,
             ]}
           />
-          <Text style={[styles.switchText, styles.switchText]}>
+          <Text style={styles.switchText}>
             {comorbidade === 'sim' ? 'Sim' : 'Não'}
           </Text>
         </Pressable>
@@ -64,7 +89,7 @@ const TelaCadastroPaciente: React.FC = () => {
               backgroundColor: pressed ? 'lightgray' : 'transparent',
             },
           ]}
-          onPress={() => console.log('Cadastrar pressionado')}>
+          onPress={handleCadastrar}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </Pressable>
         <Pressable
@@ -75,7 +100,7 @@ const TelaCadastroPaciente: React.FC = () => {
               backgroundColor: pressed ? 'lightgray' : 'transparent',
             },
           ]}
-          onPress={() => console.log('Cancelar pressionado')}>
+          onPress={handleCancelar}>
           <Text style={styles.buttonText}>Cancelar</Text>
         </Pressable>
       </View>

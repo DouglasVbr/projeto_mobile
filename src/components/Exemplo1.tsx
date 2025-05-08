@@ -19,26 +19,26 @@ const Exemplo1 = () => {
     /*Painel que desliza*/
     <ScrollView>
       {/*texto ou label */}
-      <Text style={styles.titulo1}>Exemplo 1 com style</Text>
+      <Text style={stylesLocal.titulo1}>Exemplo 1 com style</Text>
       {/* painel */}
       <View>
         <Text>Text comum sem estilização</Text>
 
         {/*imagem, o campo source é o caminho da imagem */}
         <View style={stylesLocal.centralizar}>
-          <Image source={{uri: url}} style={styles.imagem_200} />
+          <Image source={{uri: url}} style={{width: 200, height: 200}} />
         </View>
       </View>
 
       {/*caixa de texto */}
       <TextInput
-        style={[styles.caixa_texto, styles.largura_70]}
+        style={[styles.input, {width: '70%'}]}
         defaultValue="Digite aqui"
       />
 
       {/*isso é um botão */}
       <Pressable style={{backgroundColor: 'green', alignItems: 'center'}}>
-        <Text style={styles.titulo2}>Isso é um Botão</Text>
+        <Text style={styles.title}>Isso é um Botão</Text>
       </Pressable>
     </ScrollView>
   );
