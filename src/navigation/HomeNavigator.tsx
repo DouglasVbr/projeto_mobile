@@ -4,11 +4,15 @@ import {
 } from '@react-navigation/native-stack';
 
 import TelaCadastroPaciente from '../layouts/TelaExercicio';
+import TelaPrincipal from '../layouts/TelaPrincipal';
+import TelaAluno from '../layouts/TelaAluno';
 
 //Define quais as telas e os parâmetros de cada tela
 type RootStackParamList = {
   TelaPrincipal: undefined;
   CadastroPaciente: undefined;
+  TelaAluno: undefined;
+  TelaExercicio: undefined;
 };
 
 //Cria a Stack (tipo de navegação onde as telas estão em uma "pilha")
@@ -19,12 +23,14 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const HomeNavigator = () => {
   return (
     <Stack.Navigator
-      initialRouteName="TelaPrincipal" //nome da tela inicial
+      initialRouteName="TelaAluno" //nome da tela inicial
       screenOptions={{headerShown: false}} //headerShown define se o cabeçalho irá ser exibido
     >
-      {/* define uma te la dando um nome(igual ao RootStackParamList) e qual o componente será carregado */}
-
+      {/* define uma tela dando um nome(igual ao RootStackParamList) e qual o componente será carregado */}
+      <Stack.Screen name="TelaPrincipal" component={TelaPrincipal} />
       <Stack.Screen name="CadastroPaciente" component={TelaCadastroPaciente} />
+      <Stack.Screen name="TelaAluno" component={TelaAluno} />
+      <Stack.Screen name="TelaExercicio" component={TelaCadastroPaciente} />
     </Stack.Navigator>
   );
 };

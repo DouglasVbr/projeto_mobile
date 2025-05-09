@@ -30,10 +30,10 @@ const ExemploCalculo = (props: CalculoProps) => {
 
   return (
     <>
-      <Text style={styles.titulo2}>Somar:{somar()}</Text>
-      <Text style={styles.titulo2}>Subtrair:{subtrair()}</Text>
-      <Text style={styles.titulo2}>Dividir:{dividir()}</Text>
-      <Text style={styles.titulo2}>Multiplicar:{multiplicar()}</Text>
+      <Text style={styles.title}>Somar:{somar()}</Text>
+      <Text style={styles.title}>Subtrair:{subtrair()}</Text>
+      <Text style={styles.title}>Dividir:{dividir()}</Text>
+      <Text style={styles.title}>Multiplicar:{multiplicar()}</Text>
     </>
   );
 };
