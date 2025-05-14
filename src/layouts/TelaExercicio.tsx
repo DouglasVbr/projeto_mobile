@@ -90,7 +90,7 @@ const TelaCadastroPaciente: React.FC = () => {
             },
           ]}
           onPress={handleCadastrar}>
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.toggleButtonText}>Cadastrar</Text>
         </Pressable>
         <Pressable
           style={({pressed}) => [
@@ -101,7 +101,7 @@ const TelaCadastroPaciente: React.FC = () => {
             },
           ]}
           onPress={handleCancelar}>
-          <Text style={styles.buttonText}>Cancelar</Text>
+          <Text style={styles.toggleButtonText}>Cancelar</Text>
         </Pressable>
       </View>
     </View>
