@@ -15,13 +15,13 @@ const TelaPrincipal = () => {
       <View style={styles.buttonContainer}>
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate('TextInputList')}>
+          onPress={() => navigation.navigate('TextInputList' as never)}>
           <Text style={styles.buttonText}>Lista de Textos</Text>
         </Pressable>
 
         <Pressable
           style={styles.button}
-          onPress={() => navigation.navigate('CalculadoraMedias')}>
+          onPress={() => navigation.navigate('CalculadoraMedias' as never)}>
           <Text style={styles.buttonText}>Calculadora de Médias</Text>
         </Pressable>
 

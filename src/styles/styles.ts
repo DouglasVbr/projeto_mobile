@@ -7,6 +7,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
   },
+  header: {
+    padding: 20,
+    backgroundColor: '#4a90e2',
+  },
+  headerText: {
+    fontSize: 24,
+    color: '#fff',
+    textAlign: 'center',
+  },
   image: {
     width: 100,
     height: 100,
@@ -19,6 +28,7 @@ const styles = StyleSheet.create({
   },
   form: {
     width: '100%',
+    padding: 20,
   },
   label: {
     fontSize: 16,
@@ -34,12 +44,32 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'goldenrod',
+    borderColor: '#ddd',
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 5,
     marginBottom: 15,
     paddingHorizontal: 10,
     backgroundColor: '#fff',
+    padding: 10,
+    fontSize: 16,
+  },
+  comorbidadeContainer: {
+    marginBottom: 15,
+  },
+  radioGroup: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  radioButton: {
+    padding: 10,
+    borderWidth: 1,
+    borderColor: '#ddd',
+    borderRadius: 5,
+    width: 100,
+    alignItems: 'center',
+  },
+  radioButtonSelected: {
+    backgroundColor: '#4a90e2',
   },
   toggleContainer: {
     flexDirection: 'row',
@@ -80,6 +110,23 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'goldenrod',
     backgroundColor: 'transparent',
+  },
+  buttonCadastrar: {
+    backgroundColor: '#4a90e2',
+    padding: 15,
+    borderRadius: 5,
+    width: '48%',
+  },
+  buttonCancelar: {
+    backgroundColor: '#ff6b6b',
+    padding: 15,
+    borderRadius: 5,
+    width: '48%',
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
   },
   toggleLabel: {
     fontSize: 16,
